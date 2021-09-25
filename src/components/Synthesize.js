@@ -8,7 +8,7 @@ export default function Synthesize() {
   const [halwaState, sethalwaState] = useState("");
   const [paratha, setParatha] = useState("");
   const [playingSound, setplayingSound] = useState(false);
-  const [textType, settextType] = useState(true)
+  const [textType, settextType] = useState(false)
 
   useEffect(() => {
     console.log("rang badal");
@@ -28,9 +28,10 @@ export default function Synthesize() {
   };
 
   return (
-    <div className="w-4/5 mx-auto my-10 flex">
-      <div className="w-1/2 flex flex-col p-2">
-        <div className="flex items-center w-full mb-3">
+    <div className='w-full bg-ziggly bg-repeat-x'>
+      <div className="w-4/5 mx-auto my-10 flex">
+      <div className="w-1/2 flex flex-col p-2 ">
+        <div className="flex justify-end px-5 items-end w-full mb-3 w1/5">
           <label htmlFor="toggleB" className="flex items-center cursor-pointer">
           <div className="mr-3 text-white font-medium">Text</div>
             <div className="relative">
@@ -52,14 +53,21 @@ export default function Synthesize() {
         />
         <Buttons handleClick={doSomething}>Speak</Buttons>
       </div>
-      <div className="w-1/2 flex flex-col p-2 items-center justify-center">
-        {playingSound ? <img src={sound} width="50%" alt='playing audio' /> : ""}
+      <div className="w-1/2 flex flex-col p-16 items-center justify-center">
+        {playingSound ? <img src={sound} width="50%" alt='playing audio' /> : 
+          <div className='w-full h-full p-4 text-white text-opacity-20 border rounded-3xl border-white border-opacity-20 flex flex-col justify-center items-center'>
+            <p>* select TEXT or SSML carefully</p>
+            <p>Type plain text or SSML code(without spaces, include backslash for extra quotes)</p>
+            <p>Click "Speak" and wait. Your audio will play here.</p>
+          </div>
+        }
         <BolBachan
           paratha={paratha}
           halwaState={halwaState}
           isPlaying={isPlaying}
         />
       </div>
+    </div>
     </div>
   );
 }
