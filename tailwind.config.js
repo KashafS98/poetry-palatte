@@ -15,7 +15,14 @@ module.exports = {
       sans: ['Monsterrat', 'sans-serif'],
       serif: ['Libre Baskerville', 'serif'],
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '10p': '10%',
+      },
+      backgroundImage: {
+        'ziggly': "url('https://d12xoj7p9moygp.cloudfront.net/images/home/bg-share.svg')",
+       }
+    }
   },
   variants: {
     extend: {},
