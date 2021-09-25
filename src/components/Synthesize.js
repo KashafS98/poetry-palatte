@@ -28,7 +28,7 @@ export default function Synthesize() {
   };
 
   return (
-    <div className='w-full bg-ziggly bg-repeat-x'>
+    <div className='w-full h-4/5 bg-ziggly bg-repeat-x'>
       <div className="w-4/5 mx-auto my-10 flex">
       <div className="w-1/2 flex flex-col p-2 ">
         <div className="flex justify-end px-5 items-end w-full mb-3 w1/5">
